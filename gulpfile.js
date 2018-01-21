@@ -4,7 +4,8 @@ const gulp      = require('gulp'),
       minifyCSS = require('gulp-csso'),
       rename    = require('gulp-rename'),
       sass      = require('gulp-sass'),
-      uglify    = require('gulp-uglify');
+      uglify    = require('gulp-uglify'),
+      ts        = require('gulp-typescript');
 
 gulp.task('styles', ['styles:vendor'], function () {
   return gulp.src(['./src/sass/**/*.scss', '!./src/sass/vendor/**/*.scss'])
@@ -17,8 +18,11 @@ gulp.task('styles', ['styles:vendor'], function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('./src/scripts/**/*.js')
-        .pipe(uglify())
+    return gulp.src('./src/scripts/**/*.ts')
+      .pipe(ts({
+            noImplicitAny: true,
+        }))
+        .js.pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))

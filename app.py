@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from library.DamageResistanceCalc import DamangeResistanceCalc
 
 FalloutApp = Flask(__name__)
@@ -28,6 +28,7 @@ def calc_damage_resistance():
 
         dr = DamangeResistanceCalc()
         result = dr.damage_coeff(damage, damage_resist)
+        return jsonify(dict(damage_coeff=result))
 
     return render_template(
         'calculators/damage_resistance.html', damage_coeff=result
