@@ -2,13 +2,10 @@
 from flask import Flask, render_template
 FalloutApp = Flask(__name__)
 
+
 @FalloutApp.route("/")
 def index():
-	return 'Hello, Flask!'
-
-@FalloutApp.route("/hello")
-def hello():
-	return "Hello!"
+    return render_template('templates/index.html')
 
 if __name__ == "__main__":
-	FalloutApp.run()
+    FalloutApp.run()
