@@ -16,4 +16,4 @@ function calculate_damage_coeff(e: any) {
 }
 
 var damage_coeff_form = <HTMLElement>document.body.querySelector('form');
-damage_coeff_form.addEventListener('onsubmit', calculate_damage_coeff);
+damage_coeff_form.addEventListener('submit', calculate_damage_coeff);
