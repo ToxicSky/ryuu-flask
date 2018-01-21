@@ -13,7 +13,7 @@ class DamangeResistanceCalc:
         damage_coeff = 1 - result
         calc = damage * damage_coeff
 
-        print(round(damage - calc))
+        return round(damage - calc)
 
     def set_difficulty(self, difficulty_name):
         difficulty_levels = [
