@@ -12,7 +12,7 @@ def index():
 @FalloutApp.route("/calculators")
 def calculators():
     calc_list = [
-        {link: 'damage-resistance', name: 'Damage Resistance'}
+        dict(link='damage-resistance', name='Damage Resistance')
     ]
     return render_template('calculators.html', calculators=calc_list)
 
