@@ -1,6 +1,11 @@
-<!doctype html>
-<html>
-  <body>
-    <h1>Hello, flask!</h1>
-  </body>
-</html>
+{% extends 'block.html' %}
+
+{% block content %}
+<ul>
+    {% if items %}
+        {% for item in items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    {% endif %}
+</ul>
+{% endblock %}

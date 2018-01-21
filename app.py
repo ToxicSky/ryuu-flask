@@ -5,7 +5,8 @@ FalloutApp = Flask(__name__)
 
 @FalloutApp.route("/")
 def index():
-    return render_template('index.html')
+    items = ['First', 'Second']
+    return render_template('index.html', items=items)
 
 if __name__ == "__main__":
     FalloutApp.run()
