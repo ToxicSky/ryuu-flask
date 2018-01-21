@@ -7,13 +7,13 @@ function calculate_damage_coeff(e: any) {
       method: 'post',
       url: '/calculators/damage_resistance',
       data: {
-        damage: 'Fred',
-        damage_resist: 'Flintstone'
+        damage: 100,
+        damage_resist: 50
       }
     }).then(function(response) {
       console.log(response.data);
     });
 }
 
-var damage_coeff_form = document.querySelector('form');
-damage_coeff_form.onsubmit = calculate_damage_coeff;
+var damage_coeff_form = <HTMLElement>document.body.querySelector('form');
+damage_coeff_form.addEventListener('onsubmit', calculate_damage_coeff);
