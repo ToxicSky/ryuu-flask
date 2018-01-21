@@ -8,5 +8,13 @@ def index():
     items = ['First', 'Second']
     return render_template('index.html', items=items)
 
+
+@FalloutApp.route("/calculators")
+def calculators():
+    calc_list = [
+        {link: 'damage-resistance', name: 'Damage Resistance'}
+    ]
+    return render_template('calculators.html', calculators=calc_list)
+
 if __name__ == "__main__":
     FalloutApp.run()

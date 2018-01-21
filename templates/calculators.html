@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <ul>
+        {% if calculators %}
+            {% for calculator in calculators %}
+                <li>
+                    <a href="{{ calculator.link }}">{{ calculator.name }}</a>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}
