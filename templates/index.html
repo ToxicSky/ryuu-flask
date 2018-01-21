@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<ul>
-    {% if items %}
-        {% for item in items %}
-            <li>{{ item }}</li>
-        {% endfor %}
-    {% endif %}
-</ul>
+<div>
+    <p>Trying out a few functions in jinja and playing around in Python.</p>
+</div>
+<div>
+    <ul>
+        {% if items %}
+            {% for item in items %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>
 {% endblock %}
