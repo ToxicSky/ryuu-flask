@@ -7,6 +7,7 @@ class DamangeResistanceCalc:
     fPhysicalArmorDmgReductionExp = 0.365
 
     def calc_coeff(self, damage, damage_resist):
+        damage = float(damage)
         resist = float(damage)/float(damage_resist) * 0.15
         result = min([0.99, resist ** 0.365]) * self.fPhysicalDamageFactor
 
