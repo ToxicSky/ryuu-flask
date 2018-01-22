@@ -6,6 +6,7 @@ function calculate_damage_coeff(e: any) {
     axios({
       method: 'post',
       url: '/calculators/damage_resistance',
+
       data: {
         damage: 100,
         damage_resist: 50

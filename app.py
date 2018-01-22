@@ -23,11 +23,11 @@ def calculators():
 def calc_damage_resistance():
     result = 0
     if (request.method == 'POST'):
-        damage = request.form['damage']
-        damage_resist = request.form['damage_resist']
+        # damage = request.form['damage']
+        # damage_resist = request.form['damage_resist']
 
-        dr = DamangeResistanceCalc()
-        result = dr.damage_coeff(damage, damage_resist)
+        # dr = DamangeResistanceCalc()
+        # result = dr.damage_coeff(damage, damage_resist)
         return jsonify(dict(damage_coeff=result))
 
     return render_template(
