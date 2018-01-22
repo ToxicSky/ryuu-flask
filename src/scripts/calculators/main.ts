@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
-function calculate_damage_coeff(e: any) {
+export function calculate_damage_coeff(e: any) {
     e.preventDefault();
 
     axios({
