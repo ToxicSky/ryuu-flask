@@ -32,6 +32,7 @@ def api_calc_damage_resistance():
     damage_resist = request.form['damage_resist']
 
     dr = DamangeResistanceCalc()
+    dr.set_difficulty('very_hard')
     result = dr.calc_coeff(damage, damage_resist)
     return jsonify(dict(damage_coeff=result))
 
