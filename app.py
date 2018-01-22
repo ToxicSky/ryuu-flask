@@ -22,7 +22,7 @@ def calculators():
 @FalloutApp.route('/calculators/damage-resistance', methods=['GET'])
 def calc_damage_resistance():
     return render_template(
-        'calculators/damage_resistance.html', damage_coeff=result
+        'calculators/damage_resistance.html', damage_coeff=0
     )
 
 
