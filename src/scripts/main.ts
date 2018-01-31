@@ -1,4 +1,4 @@
-import {DamageCoeffCalculator} from './calculators/damage_coeff_calculator';
+import damageCoeff, {DamageCoeffCalculator} from './calculators/damage_coeff_calculator';
 
 // var damage_coeff_form = document.querySelector('.damage_coeff_form');
 // var calc = new DamageCoeffCalculator();
