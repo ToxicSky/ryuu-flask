@@ -1,5 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
+console.log('Hello, World!');
 class Calculator
 {
   public calculate_damage_coeff(e: Event) {
@@ -19,7 +20,6 @@ class Calculator
   }
 }
 
-console.log('Hello, World!');
 var calc = new Calculator;
 console.log(calc);
 var damage_coeff_form = document.querySelector('form');
