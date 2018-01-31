@@ -1,6 +1,7 @@
 #!/usr/bin/python
 from flask import Flask, render_template, request, jsonify
 from library.DamageResistanceCalc import DamangeResistanceCalc
+import time
 
 FalloutApp = Flask(__name__)
 
@@ -22,7 +23,7 @@ def calculators():
 @FalloutApp.route('/calculators/damage-resistance', methods=['GET'])
 def calc_damage_resistance():
     return render_template(
-        'calculators/damage_resistance.html', damage_coeff=0
+        'calculators/damage_resistance.html', damage_coeff=0, now=time.time()
     )
 
 
