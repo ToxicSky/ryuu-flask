@@ -1,5 +1,5 @@
+import DamageCoeffCalculator from './calculators/damage_coeff_calculator';
 console.log('Hello, World!');
-// import DamageCoeffCalculator from './calculators/damage_coeff_calculator';
 
 // (function() {
 //     var calc = new DamageCoeffCalculator();
