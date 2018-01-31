@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
-declare interface window : Window {
-  calc:any;
+declare interface window {
+  calc: any;
 }
 
 class Calculator
