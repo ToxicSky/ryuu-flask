@@ -19,4 +19,4 @@ class DamageCoeffCalculator
   }
 }
 
-export {DamageCoeffCalculator};
+export default DamageCoeffCalculator;
