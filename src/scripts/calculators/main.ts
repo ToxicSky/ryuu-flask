@@ -1,9 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
-export interface CustomWindow extends Window {
-    calc: any;
-}
-
 class Calculator
 {
   public calculate_damage_coeff(e: Event) {
@@ -23,9 +19,8 @@ class Calculator
   }
 }
 
-declare let window: CustomWindow;
-window.calc = new Calculator;
-var calc = window.calc;
+console.log('Hello, World!');
+var calc = new Calculator;
 console.log(calc);
 var damage_coeff_form = document.querySelector('form');
 damage_coeff_form.addEventListener('onsubmit', calc.calculate_damage_coeff);
