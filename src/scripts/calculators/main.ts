@@ -1,5 +1,9 @@
 import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
+declare interface window : Window {
+  calc:any;
+}
+
 class Calculator
 {
   public calculate_damage_coeff(e: Event) {
@@ -19,7 +23,7 @@ class Calculator
   }
 }
 
-Window.calc = new Calculator;
+window.calc = new Calculator;
 console.log(calc);
 var damage_coeff_form = document.querySelector('form');
 damage_coeff_form.addEventListener('onsubmit', calc.calculate_damage_coeff);
