@@ -23,8 +23,9 @@ class Calculator
   }
 }
 
-CustomWindow.calc = new Calculator;
-var calc = CustomWindow.calc;
+declare let window: CustomWindow;
+window.calc = new Calculator;
+var calc = window.calc;
 console.log(calc);
 var damage_coeff_form = document.querySelector('form');
 damage_coeff_form.addEventListener('onsubmit', calc.calculate_damage_coeff);
