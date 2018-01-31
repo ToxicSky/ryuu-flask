@@ -1,7 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
-console.log('Hello, World!');
-class Calculator
+export default class Calculator
 {
   public calculate_damage_coeff(e: Event) {
     e.preventDefault();
