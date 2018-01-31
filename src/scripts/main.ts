@@ -1,6 +1,6 @@
 import {DamageCoeffCalculator} from './calculators/damage_coeff_calculator';
 
-var damage_coeff_form = document.querySelector('.damage_coeff_form');
+// var damage_coeff_form = document.querySelector('.damage_coeff_form');
 console.log(damage_coeff_form);
 
 // (function() {
