@@ -10,5 +10,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='js/calculators/main.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/calculators/main.min.js') }}?{{ now }}"></script>
 {% endblock %}
