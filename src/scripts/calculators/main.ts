@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
-export default class Calculator
+class Calculator
 {
   public calculate_damage_coeff(e: Event) {
     e.preventDefault();
