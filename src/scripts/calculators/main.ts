@@ -1,20 +1,24 @@
 import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
-export function calculate_damage_coeff(e: any) {
-  e.preventDefault();
+export class Calculator
+{
+  public calculate_damage_coeff(e: Event) {
+    e.preventDefault();
 
-  axios({
-    method: 'post',
-    url: '/api/calculators/damage_resistance',
+    axios({
+      method: 'post',
+      url: '/api/calculators/damage_resistance',
 
-    data: {
-      damage: 100,
-      damage_resist: 50
-    }
-  }).then(function(response) {
-    console.log(response.data);
-  });
+      data: {
+        damage: 100,
+        damage_resist: 50
+      }
+    }).then(function(response: any) {
+      console.log(response.data);
+    });
+  }
 }
 
-var damage_coeff_form = <HTMLElement>document.body.querySelector('form');
-damage_coeff_form.addEventListener('submit', calculate_damage_coeff);
+var calc = new Calculator;
+var damage_coeff_form = document.querySelector('form');
+damage_coeff_form.addEventListener('onsubmit', calc.calculate_damage_coeff);

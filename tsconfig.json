@@ -1,0 +1,13 @@
+{
+   "compilerOptions": {
+        // "module": "es2015",
+        // "allowSyntheticDefaultImports": true,
+        "target": "es6",
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "baseUrl": "."
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

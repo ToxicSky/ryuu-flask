@@ -5,7 +5,10 @@ const gulp      = require('gulp'),
       rename    = require('gulp-rename'),
       sass      = require('gulp-sass'),
       uglify    = require('gulp-uglify'),
-      ts        = require('gulp-typescript');
+      ts        = require('gulp-typescript'),
+      babel     = require('gulp-babel');
+
+var tsProject = ts.createProject('tsconfig.json');
 
 gulp.task('styles', ['styles:vendor'], function () {
   return gulp.src(['./src/sass/**/*.scss', '!./src/sass/vendor/**/*.scss'])
@@ -19,10 +22,11 @@ gulp.task('styles', ['styles:vendor'], function () {
 
 gulp.task('scripts', function () {
     return gulp.src('./src/scripts/**/*.ts')
-      .pipe(ts({
-            noImplicitAny: true,
-        }))
-        .js.pipe(uglify())
+      .pipe(tsProject())
+        .js
+        .pipe(babel({
+            presets: ['env']
+        })).pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
