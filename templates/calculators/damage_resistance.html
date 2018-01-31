@@ -2,7 +2,7 @@
 
 {% block content %}
 <p>Damage Coeff: <span class="damage_taken">{{ damage_coeff }}</span></p>
-<form method="POST">
+<form class="damage_coeff_form" method="POST">
     <input type="number" name="damage" placeholder="Damage" value="0">
     <input type="number" name="damage_resits" placeholder="Damage Resistance" value="0">
     <button>Calculate</button>
@@ -11,5 +11,5 @@
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/main.min.js') }}?{{ now }}"></script>
-<script src="{{ url_for('static', filename='js/calculators/main.min.js') }}?{{ now }}"></script>
+<!-- <script src="{{ url_for('static', filename='js/calculators/main.min.js') }}?{{ now }}"></script> -->
 {% endblock %}
