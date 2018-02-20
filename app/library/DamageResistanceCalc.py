@@ -1,14 +1,24 @@
+from app.models.DamageResistanceSettings import DamageResistanceSettings
 import math
 
 
-class DamangeResistanceCalc:
+class DamageResistanceCalc:
     coeff = 0
     fPhysicalDamageFactor = 0
     fPhysicalArmorDmgReductionExp = 0.365
+    target = 'player'
+
+    def set_target(self, target='player'):
+        self.target = target
 
     def calc_coeff(self, damage, damage_resist):
+        if float(damage) <= 0:
+            damage = 1
+        if float(damage_resist) <= 0:
+            damage_resist = 1
+
         damage = float(damage)
-        resist = float(damage)/float(damage_resist) * 0.15
+        resist = damage / float(damage_resist) * 0.15
         result = min([0.99, resist ** 0.365]) * self.fPhysicalDamageFactor
 
         damage_coeff = 1 - result
@@ -30,12 +40,13 @@ class DamangeResistanceCalc:
         for difficulty in difficulty_levels:
             if difficulty['name'] == difficulty_name:
                 opted_difficulty = difficulty
+
+        if self.target == 'player':
+            sel_target = 'e_damage'
+        elif self.target == 'enemy':
+            sel_target = 'p_damage'
+
         if (opted_difficulty != None):
-            self.fPhysicalDamageFactor = opted_difficulty['p_damage']
+            self.fPhysicalDamageFactor = opted_difficulty[sel_target]
         else:
             self.fPhysicalDamageFactor = 1
-
-
-drc = DamangeResistanceCalc()
-drc.set_difficulty('very_hard')
-drc.calc_coeff(50, 250)
