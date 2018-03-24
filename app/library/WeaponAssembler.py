@@ -38,9 +38,7 @@ class WeaponAssembler:
                     try:
                         result[key] += value
                     except Exception:
-                        print(key)
-                        print(value)
-                        exit()
+                        return
             if 'prefix' in mod:
                 prefix += mod['prefix'] + ' '
             if 'suffix' in mod:

@@ -2,7 +2,12 @@ from app import db
 
 
 class WeaponSlot(db.Model):
-    slot_id = db.Column(db.Integer, db.ForeignKey('slot.id'), primary_key=True)
+    slot_id = db.Column(
+        db.Integer,
+        db.ForeignKey('slot.id'),
+        primary_key=True,
+        autoincrement=True
+    )
     weapon_id = db.Column(
         db.Integer,
         db.ForeignKey('weapon.id'),

@@ -3,6 +3,7 @@ DEBUG = True
 
 # Define the application directory
 import os
+from datetime import timedelta
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Define the database - we are working with
@@ -26,3 +27,6 @@ CSRF_SESSION_KEY = "secret"
 
 # Secret key for signing cookies
 SECRET_KEY = "secret"
+
+# JWT
+JWT_EXPIRATION_DELTA = timedelta(seconds=600)
